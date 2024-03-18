@@ -3,6 +3,7 @@ import numpy as np
 from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
 
+
 def analyze_video(video_path):
     cap = cv2.VideoCapture(video_path)
     frames = []
@@ -22,6 +23,7 @@ def analyze_video(video_path):
             return True  # Explicit content detected in at least one frame
 
     return False  # No explicit content detected
+
 
 def is_explicit_frame(frame):
     # Load a pre-trained ResNet50 model for image classification
@@ -46,6 +48,7 @@ def is_explicit_frame(frame):
             return True  # Explicit content detected
 
     return False  # No explicit content detected
+
 
 # Example usage
 video_path = 'path/to/your/video.mp4'
